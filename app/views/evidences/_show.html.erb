@@ -1,0 +1,39 @@
+
+
+<p>
+  <strong>Competency:</strong>
+  <%= @evidence.competency %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @evidence.level %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @evidence.title %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @evidence.summary %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @evidence.report %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @evidence.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @evidence.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_evidence_path(@evidence) %> |
+<%= link_to 'Back', evidences_path %>

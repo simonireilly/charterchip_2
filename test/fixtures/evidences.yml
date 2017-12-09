@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  competency: MyString
+  level: 1
+  title: MyString
+  summary: MyString
+  report: MyText
+  start_date: 2017-12-09
+  end_date: 2017-12-09
+
+two:
+  competency: MyString
+  level: 1
+  title: MyString
+  summary: MyString
+  report: MyText
+  start_date: 2017-12-09
+  end_date: 2017-12-09
