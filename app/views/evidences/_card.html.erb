@@ -1,24 +1,28 @@
 <div class="" id="evidence-<%=evidence.id%>">
   <div class="card">
-    <img class="card-img-top" src="http://via.placeholder.com/350x150">
+    <img class="card-img-top" src="<%= evidence_image_helper(evidence) %>">
+
     <div class="card-block">
       <div class="profile">
         <div class="profile-avatar">
           <%= evidence.competency %>
         </div>
       </div>
-      <h4 class="card-title mt-3"><%= evidence.title %></h4>
-      <div class="meta">
-        <a><%= evidence.level %></a>
+      <div class="profile-2">
+        <div class="profile-avatar">
+          <%= evidence.level %>
+        </div>
       </div>
+
+      <%= link_to 'Edit', edit_evidence_path(evidence), class: 'btn btn-outline-warning float-right btn-sm' %>
+      <h4 class="card-title mt-3"><%= evidence.title %></h4>
       <div class="card-text">
-        <%= evidence.summary %>
+        <%= truncate(raw(evidence.report), length: 190, escape: false) %>
       </div>
     </div>
     <div class="card-footer">
-      <small>Last updated <%= (Date.today() - evidence.created_at.to_date).to_i %></small>
+      <small><%=evidence.updated_at.strftime("Updated on %m/%d/%Y")%> </small>
       <%= link_to 'Delete', evidence_path(evidence), method: 'delete', data: { confirm: 'Are you sure you want to remove this evidence?'}, class: 'btn btn-outline-danger float-right btn-sm' %>
-      <%= link_to 'Edit', edit_evidence_path(evidence), class: 'btn btn-secondary float-right btn-sm' %>
     </div>
   </div>
 </div>

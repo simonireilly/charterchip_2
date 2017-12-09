@@ -1,3 +1,4 @@
+// Formatted cards
 html {
   font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -63,7 +64,8 @@ h5 {
   border: 1px solid rgba(0, 0, 0, .05);
 }
 
-.profile {
+.profile,
+.profile-2{
   position: absolute;
   top: -12px;
   display: inline-block;
@@ -76,6 +78,10 @@ h5 {
   border-radius: 50%;
   background-color: #2E2F30;
   box-shadow: 1px 1px #888888;
+}
+
+.profile-2{
+  left: 50px;
 }
 
 .profile-avatar {
@@ -118,3 +124,30 @@ h5 {
 .meta a:hover {
   color: rgba(0, 0, 0, .87);
 }
+
+// Progress bars
+
+.progress {
+  overflow: visible;
+}
+
+.progress-bar {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.progress-bar:after {
+  content:"";
+  background-color: inherit;
+
+  width: 30px;
+  height: 30px;
+  margin-right: -100%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+
+  float: right;
+}
+

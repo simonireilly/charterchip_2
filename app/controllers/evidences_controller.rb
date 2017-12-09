@@ -71,6 +71,6 @@ class EvidencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evidence_params
-      params.require(:evidence).permit(:competency, :level, :title, :summary, :report, :start_date, :end_date)
+      params.require(:evidence).permit(:competency, :level, :title, :summary, :report, :start_date, :end_date, :complete)
     end
 end

@@ -17,13 +17,17 @@
           <%= form.text_field :title, id: :evidence_title, class: 'form-control'  %>
         </div>
         <div class="form-group">
+          <%= form.label :complete %>
+          <%= form.check_box :complete, id: :evidence_complete, class: 'form-control'  %>
+        </div>
+        <div class="form-group">
           <%= form.label :competency %>
-          <%= form.text_field :competency, id: :evidence_competency, class: 'form-control' %>
+          <%= form.select :competency,  competency_list_helper, {}, class: 'form-control'%>
         </div>
 
         <div class="form-group">
           <%= form.label :level %>
-          <%= form.number_field :level, id: :evidence_level, class: 'form-control' %>
+          <%= form.select :level, ['1 - Trainee','2 - Supervised','3 - Competent','4 - Expert'] ,{}, class: 'form-control' %>
         </div>
 
         <div class="form-group">
@@ -33,12 +37,12 @@
 
         <div class="form-group">
           <%= form.label :start_date %>
-          <%= form.date_select :start_date, id: :evidence_start_date, :order => [:month, :year] %>
+          <%= form.date_select :start_date, id: :evidence_start_date, :order => [:month, :year], class: 'form-control' %>
         </div>
 
         <div class="form-group">
           <%= form.label :end_date %>
-          <%= form.date_select :end_date, id: :evidence_end_date, :order => [:month, :year] %>
+          <%= form.date_select :end_date, id: :evidence_end_date, :order => [:month, :year], class: 'form-control' %>
         </div>
         <div class="actions">
           <%= form.submit class: 'btn btn-primary' %>

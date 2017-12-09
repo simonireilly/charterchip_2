@@ -5,6 +5,7 @@ class CreateEvidences < ActiveRecord::Migration[5.1]
       t.integer :level
       t.string :title
       t.string :summary
+      t.boolean :complete
       t.text :report
       t.date :start_date
       t.date :end_date

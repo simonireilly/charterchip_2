@@ -1,12 +1,33 @@
-<h1>Evidences</h1>
 
-
-<%= link_to 'New Evidence', new_evidence_path, class: 'btn btn-lg btn-outline-warning ' %>
 <div class="row">
-  <% @evidences.each do |evidence| %>
-      <div class="col-sm-6 col-md-4 col-lg-3 mt-4" id="evidence-parent-<%=evidence.id%>">
-        <%= render 'static_pages/card', evidence: evidence %>
+  <div class="col-2">
+    <div class="card">
+
+      <div class="card-body">
+        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-lg btn-outline-warning ' %>
+        <hr>
+        <% competency_review_helper.each do |key, value| %>
+
+            <span><%= key %></span>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: <%=value*25%>%" aria-valuenow="<%=value%>" aria-valuemin="0" aria-valuemax="4"></div>
+            </div>
+        <% end %>
+
+
       </div>
-  <% end %>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="row">
+      <% @evidences.each do |evidence| %>
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4" id="evidence-parent-<%=evidence.id%>">
+            <%= render 'evidences/card', evidence: evidence %>
+          </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 

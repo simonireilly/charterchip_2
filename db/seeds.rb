@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-30.times do
+Evidence.destroy_all
+
+30.times do |time|
 Evidence.create(competency: "Aii",
                 level: 2,
                 title: "Example competency evidence",
                 summary: "Working on this cool dance! I haven't got it finished yet, but when I do I think it will be great.",
-                report: "<ol><li>Built my own dancing shoes</li><li>Dusted them off</li><li>Boom!</li></ol>",
+                report: "<p>This is the #{time} piece of evidence, we want to fix a few things:</p><ol><li>Updated at and recently edited needs to be nice</li><li>We need to implement filtering and we need to have some colour coding</li><li>We needto look into getting spell check [might not need this in certain browsers]</li></ol>",
                 start_date: "2017-02-01",
                 end_date: "2017-12-01",
                 created_at: "2017-12-09 11:20:52",
