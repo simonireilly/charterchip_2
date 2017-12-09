@@ -69,11 +69,13 @@ h5 {
   display: inline-block;
   overflow: hidden;
   box-sizing: border-box;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 0;
-  border: 1px solid #fff;
+  border: 0px solid #fff;
   border-radius: 50%;
+  background-color: #2E2F30;
+  box-shadow: 1px 1px #888888;
 }
 
 .profile-avatar {
@@ -81,6 +83,10 @@ h5 {
   width: 100%;
   height: auto;
   border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-weight: 700;
 }
 
 .profile-inline {
