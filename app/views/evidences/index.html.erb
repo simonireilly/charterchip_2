@@ -1,13 +1,12 @@
 
 <div class="row">
-  <div class="col-2">
+  <div class="col-md-2">
     <div class="card">
 
       <div class="card-body">
-        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-lg btn-outline-warning ' %>
-        <hr>
-        <% competency_review_helper.each do |key, value| %>
 
+        <h1>Summary</h1>
+        <% competency_review_helper.each do |key, value| %>
             <span><%= key %></span>
             <div class="progress">
               <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: <%=value*25%>%" aria-valuenow="<%=value%>" aria-valuemin="0" aria-valuemax="4"></div>
@@ -19,13 +18,28 @@
     </div>
   </div>
 
-  <div class="col-8">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <h1>Search coming soon...</h1>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <% @evidences.each do |evidence| %>
           <div class="col-sm-6 col-md-4 col-lg-3 mt-4" id="evidence-parent-<%=evidence.id%>">
             <%= render 'evidences/card', evidence: evidence %>
           </div>
       <% end %>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div class="card">
+      <div class="card-body">
+        <h1>Add</h1>
+        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-lg btn-warning ' %>
+      </div>
     </div>
   </div>
 </div>
