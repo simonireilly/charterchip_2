@@ -5,7 +5,7 @@ end
 
 # Added
 gem 'devise', '~> 4.3'
-
+gem 'ckeditor', '4.2.4'
 
 gem 'rails', '~> 5.1.4'
 gem 'puma', '~> 3.7'
