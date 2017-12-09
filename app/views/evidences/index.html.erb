@@ -5,7 +5,7 @@
 
       <div class="card-body">
 
-        <h1>Summary</h1>
+        <h3>Summary</h3>
         <% competency_review_helper.each do |key, value| %>
             <span><%= key %></span>
             <div class="progress">
@@ -18,30 +18,29 @@
     </div>
   </div>
 
-  <div class="col-md-8">
+  <div class="col-md-10">
     <div class="row">
       <div class="card">
         <div class="card-body">
-          <h1>Search coming soon...</h1>
+          <%= select_tag :competency,  options_for_select(competency_list_helper.unshift('none')), class: 'form-control', onchange: 'myFunction()', id: 'myInput' %>
+          <!--<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for competency..">-->
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-lg btn-warning ' %>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="my-competencies">
       <% @evidences.each do |evidence| %>
-          <div class="col-sm-6 col-md-4 col-lg-3 mt-4" id="evidence-parent-<%=evidence.id%>">
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4 evidence-card" id="evidence-parent-<%=evidence.id%>">
             <%= render 'evidences/card', evidence: evidence %>
           </div>
       <% end %>
     </div>
   </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="card-body">
-        <h1>Add</h1>
-        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-lg btn-warning ' %>
-      </div>
-    </div>
-  </div>
 </div>
+
 
 
