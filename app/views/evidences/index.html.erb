@@ -22,8 +22,18 @@
     <div class="row">
       <div class="card">
         <div class="card-body">
-          <%= select_tag :competency,  options_for_select(competency_list_helper.unshift('none')), class: 'form-control', onchange: 'myFunction()', id: 'myInput' %>
-          <!--<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for competency..">-->
+
+          <h3 style="display: inline;">Filter: </h3>
+          <div class="btn-group" data-toggle="buttons">
+            <label onclick="myFunction(this)" class="btn btn-secondary active">None
+              <input type="radio" name="options" id="option0" autocomplete="off" checked>
+            </label>
+            <% competency_list_helper.each_with_index do |filter_button, index| %>
+                <label onclick="myFunction(this)" class="btn btn-outline-secondary"><%=filter_button%>
+                  <input type="radio" name="options" id="option<%=index+1%>" autocomplete="off" checked>
+                </label>
+            <% end %>
+          </div>
         </div>
       </div>
       <div class="card">
@@ -34,13 +44,14 @@
     </div>
     <div class="row" id="my-competencies">
       <% @evidences.each do |evidence| %>
-          <div class="col-sm-6 col-md-4 col-lg-3 mt-4 evidence-card" id="evidence-parent-<%=evidence.id%>">
+          <div class="col-sm-6 col-md-4 col-lg-3 mt-4 evidence-card" id="evidence-parent-<%=evidence.id%>" data-groups='["<%=evidence.competency%>"]'>
             <%= render 'evidences/card', evidence: evidence %>
           </div>
       <% end %>
     </div>
   </div>
 </div>
+
 
 
 

@@ -1,8 +1,9 @@
-function myFunction() {
+function myFunction(button_object) {
     // Declare variables
     var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
+    input = $(button_object).text();
+    filter = input.replace(/\s/g,'').toUpperCase();
+    console.log(filter);
     ul = document.getElementById("my-competencies");
     li = ul.getElementsByClassName('filter');
 
@@ -10,7 +11,8 @@ function myFunction() {
 
     for (i = 0; i < li.length; i++) {
         a = li[i];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1 || filter == 'NONE') {
+        console.log(a.innerText.toUpperCase());
+        if (a.innerText.replace(/\s/g,'').toUpperCase() === filter || filter == 'NONE') {
             a.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "";
         } else {
             a.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "none";
