@@ -3,7 +3,6 @@ function myFunction(button_object) {
     var input, filter, ul, li, a, i;
     input = $(button_object).text();
     filter = input.replace(/\s/g,'').toUpperCase();
-    console.log(filter);
     ul = document.getElementById("my-competencies");
     li = ul.getElementsByClassName('filter');
 
@@ -11,13 +10,14 @@ function myFunction(button_object) {
 
     for (i = 0; i < li.length; i++) {
         a = li[i];
-        console.log(a.innerText.toUpperCase());
         if (a.innerText.replace(/\s/g,'').toUpperCase() === filter || filter == 'NONE') {
-            a.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "";
+            a.parentNode.parentNode.parentNode.parentNode.parentNode.classList.remove("hidden-card");
         } else {
-            a.parentNode.parentNode.parentNode.parentNode.parentNode.style.display = "none";
+            a.parentNode.parentNode.parentNode.parentNode.parentNode.classList.add("hidden-card");
         }
     }
 
 
 }
+
+

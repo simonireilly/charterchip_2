@@ -41,7 +41,15 @@ module EvidencesHelper
     ]
   end
 
+  def competency_color_helper(evidence)
+    competency_color_getter(evidence.competency[0])
+  end
+  def competency_color_getter(competency)
+    color_hash = {A: 'dark', B: 'primary', C: 'info', D: 'success', E: 'secondary'}
+    color_hash[competency.to_sym]
+  end
+
   def evidence_image_helper(evidence)
-    "https://picsum.photos/300/150?image=#{rand(100)}"
+    "https://picsum.photos/300/50?image=#{rand(100)}"
   end
 end

@@ -1,3 +1,19 @@
 // Place all the styles related to the Evidences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.evidence-card {
+  position: static;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.evidence-card.hidden-card {
+  position:absolute;
+  opacity: 0;
+  transform: rotateX(90deg);
+}
+
+
+
