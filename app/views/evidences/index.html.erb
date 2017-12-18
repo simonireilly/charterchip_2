@@ -19,9 +19,6 @@
       </div>
     </div>
   </div>
-  <div class="">
-    <hr>
-  </div>
   <div class="col-lg-10">
       <div class="card" style="width: 100%">
         <div class="card-body">
@@ -29,9 +26,13 @@
             <div class="col-md-2" id="sortButton">
               <%= select_tag :sortSelect, options_for_select([['Newest first','data-created'],['Recently updated', 'data-updated']]), class: 'form-control', id: 'sortSelect' %>
             </div>
+            <div class="col-md-12">
+              <hr>
+              <div class="clearfix"></div>
+            </div>
             <div class="col-md-10">
               <div class="btn-group d-block" data-toggle="buttons">
-                <label onclick="myFunction(this)" class="btn btn-secondary active">None
+                <label onclick="myFunction(this)" class="btn btn-outline-secondary active">None
                   <input type="radio" name="options" id="option0" autocomplete="off" checked>
                 </label>
                 <% competency_list_helper.each_with_index do |filter_button, index| %>
