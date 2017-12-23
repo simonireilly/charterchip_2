@@ -5,13 +5,15 @@
 
       <div class="card-body">
 
-        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-warning ' %>
+        <%= link_to 'Add Evidence', new_evidence_path, class: 'btn btn-warning d-block' %>
         <hr>
         <h5>Summary</h5>
         <% competency_review_helper.each do |key, value| %>
-            <span><%= key %></span>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-<%= competency_color_getter(key[0]) %>" role="progressbar" style="width: <%=value*25%>%" aria-valuenow="<%=value%>" aria-valuemin="0" aria-valuemax="4"></div>
+            <div>
+              <span><%= key %></span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-<%= competency_color_getter(key[0]) %>" role="progressbar" style="width: <%=value*25%>%" aria-valuenow="<%=value%>" aria-valuemin="0" aria-valuemax="4"></div>
+              </div>
             </div>
         <% end %>
 

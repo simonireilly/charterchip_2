@@ -1,4 +1,5 @@
 <div class="" id="evidence-<%=evidence.id%>">
+
   <div class="card ">
     <img class="card-img-top" src="<%= evidence_image_helper(evidence) %>">
 
@@ -13,10 +14,12 @@
           <%= evidence.level %>
         </div>
       </div>
+      <%= link_to 'Edit', edit_evidence_path(evidence), class: 'btn btn-outline-primary  d-float float-right btn-sm' %>
 
-      <%= link_to 'Edit', edit_evidence_path(evidence), class: 'btn  float-right btn-sm' %>
       <h4 class="card-title mt-3"><%= evidence.title %></h4>
+      <div class="card-text"><b>Summary: </b><em><%=evidence.summary%></em></div>
       <div class="card-text">
+        <b>Evidence</b>
         <%= truncate(raw(evidence.report), length: 190, escape: false) %>
       </div>
     </div>

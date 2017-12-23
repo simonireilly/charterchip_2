@@ -1,17 +1,17 @@
 <%= form_with(model: evidence, local: true) do |form| %>
-  <% if evidence.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(evidence.errors.count, "error") %> prohibited this evidence from being saved:</h2>
-
-      <ul>
-      <% evidence.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
     <div class="row">
       <div class="col-md-3">
+        <% if evidence.errors.any? %>
+            <div class="alert alert-primary" role="alert" id="error_explanation">
+              <h5><%= pluralize(evidence.errors.count, "error") %> stopped this evidence being saved:</h5>
+              <hr/>
+              <ul>
+                <% evidence.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
         <div class="form-group">
           <%= form.label :title %>
           <%= form.text_field :title, id: :evidence_title, class: 'form-control'  %>
