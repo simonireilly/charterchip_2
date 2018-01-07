@@ -1,6 +1,6 @@
-<div class="" id="evidence-<%=evidence.id%>">
+<div id="evidence-<%=evidence.id%>" data-toggle="popover" data-html="true" title="Evidence" data-content="<%=evidence.report%>">
 
-  <div class="card ">
+  <div class="card">
     <img class="card-img-top" src="<%= evidence_image_helper(evidence) %>">
 
     <div class="card-block" >
@@ -20,7 +20,7 @@
       <div class="card-text"><b>Summary: </b><em><%=evidence.summary%></em></div>
       <div class="card-text">
         <b>Evidence</b>
-        <%= truncate(raw(evidence.report), length: 190, escape: false) %>
+        <%= truncate(raw(evidence.report), length: 150, escape: false) %>
       </div>
     </div>
     <div class="card-footer">

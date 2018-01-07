@@ -48,7 +48,7 @@
         </div>
       </div>
 
-    <div class="row" id="my-competencies">
+    <div class="card-deck" id="my-competencies">
       <% @evidences.each do |evidence| %>
           <div class="col-sm-6 col-md-4 col-lg-3 mt-4 evidence-card" id="evidence-parent-<%=evidence.id%>"
                data-groups='["<%=evidence.competency%>"]' data-created="<%= evidence.created_at.to_i %>" data-updated="<%= evidence.updated_at.to_i %>">

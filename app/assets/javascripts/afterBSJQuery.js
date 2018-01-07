@@ -11,3 +11,6 @@ $("#sortButton").on("click", function () {
         $(this).appendTo($wrapper);
     });
 });
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
