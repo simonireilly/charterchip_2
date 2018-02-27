@@ -5,7 +5,8 @@ class EvidencesController < ApplicationController
   # GET /evidences
   # GET /evidences.json
   def index
-    @evidences = current_user.evidences.all
+    @evidences = current_user.evidences.all_evidences
+    @recent_evidences = current_user.evidences.recent_evidences
   end
 
   # GET /evidences/1

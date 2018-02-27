@@ -45,7 +45,7 @@ module EvidencesHelper
     competency_color_getter(evidence.competency[0])
   end
   def competency_color_getter(competency)
-    color_hash = {A: 'dark', B: 'primary', C: 'info', D: 'success', E: 'secondary'}
+    color_hash = {A: 'danger', B: 'primary', C: 'info', D: 'success', E: 'secondary'}
     color_hash[competency.to_sym]
   end
 

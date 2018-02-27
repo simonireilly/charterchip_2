@@ -22,19 +22,31 @@
     </div>
   </div>
   <div class="col-lg-10">
-      <div class="card" style="width: 100%">
+    <div class="card title-cards" style="width: 100%">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-10">
+            <h3>Most recently edited</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-deck">
+
+      <% @recent_evidences.each do |evidence| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4 evidence-card">
+          <%= render 'evidences/card', evidence: evidence %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="card title-cards" style="width: 100%">
         <div class="card-body">
           <div class="row">
-            <div class="col-md-2" id="sortButton">
-              <%= select_tag :sortSelect, options_for_select([['Newest first','data-created'],['Recently updated', 'data-updated']]), class: 'form-control', id: 'sortSelect' %>
-            </div>
-            <div class="col-md-12 d-block d-md-none">
-              <hr>
-              <div class="clearfix"></div>
-            </div>
             <div class="col-md-10">
+
               <div class="btn-group d-block" data-toggle="buttons">
-                <label onclick="myFunction(this)" class="btn btn-outline-secondary active">None
+                <label onclick="myFunction(this)" class="btn btn-outline-secondary active">ALL
                   <input type="radio" name="options" id="option0" autocomplete="off" checked>
                 </label>
                 <% competency_list_helper.each_with_index do |filter_button, index| %>

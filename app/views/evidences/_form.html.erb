@@ -1,61 +1,62 @@
 <%= form_with(model: evidence, local: true) do |form| %>
     <div class="row">
-      <div class="col-md-3">
-        <% if evidence.errors.any? %>
-            <div class="alert alert-primary" role="alert" id="error_explanation">
-              <h5><%= pluralize(evidence.errors.count, "error") %> stopped this evidence being saved:</h5>
-              <hr/>
-              <ul>
-                <% evidence.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
-        <div class="form-group">
-          <%= form.label :title %>
-          <%= form.text_field :title, id: :evidence_title, class: 'form-control'  %>
-        </div>
-        <div class="form-group">
-          <%= form.label :complete %>
-          <%= form.check_box :complete, id: :evidence_complete, class: 'form-control'  %>
-        </div>
-        <div class="form-group">
-          <%= form.label :competency %>
-          <%= form.select :competency,  competency_list_helper, {}, class: 'form-control'%>
-        </div>
+      <div class="col-md-3 card">
+        <div class="card-body">
+          <% if evidence.errors.any? %>
+              <div class="alert alert-primary" role="alert" id="error_explanation">
+                <h5><%= pluralize(evidence.errors.count, "error") %> stopped this evidence being saved:</h5>
+                <hr/>
+                <ul>
+                  <% evidence.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <div class="form-group">
+            <%= form.label :title %>
+            <%= form.text_field :title, id: :evidence_title, class: 'form-control'  %>
+          </div>
+          <div class="form-group">
+            <%= form.label :complete %>
+            <%= form.check_box :complete, id: :evidence_complete, class: 'form-control'  %>
+          </div>
+          <div class="form-group">
+            <%= form.label :competency %>
+            <%= form.select :competency,  competency_list_helper, {}, class: 'form-control'%>
+          </div>
 
-        <div class="form-group">
-          <%= form.label :level %>
-          <%= form.select :level, [['1 - Trainee',1],['2 - Supervised',2],['3 - Competent',3],['4 - Expert',4]] ,{}, class: 'form-control' %>
-        </div>
+          <div class="form-group">
+            <%= form.label :level %>
+            <%= form.select :level, [['1 - Trainee',1],['2 - Supervised',2],['3 - Competent',3],['4 - Expert',4]] ,{}, class: 'form-control' %>
+          </div>
 
-        <div class="form-group">
-          <%= form.label :summary %>
-          <%= form.text_field :summary, id: :evidence_summary, class: 'form-control' %>
-        </div>
+          <div class="form-group">
+            <%= form.label :summary %>
+            <%= form.text_field :summary, id: :evidence_summary, class: 'form-control' %>
+          </div>
 
-        <div class="form-group">
-          <%= form.label :start_date %>
-          <%= form.date_select :start_date, id: :evidence_start_date, :order => [:month, :year], class: 'form-control' %>
-        </div>
+          <div class="form-group">
+            <%= form.label :start_date %>
+            <%= form.date_select :start_date, id: :evidence_start_date, :order => [:month, :year], class: 'form-control' %>
+          </div>
 
-        <div class="form-group">
-          <%= form.label :end_date %>
-          <%= form.date_select :end_date, id: :evidence_end_date, :order => [:month, :year], class: 'form-control' %>
-        </div>
-        <div class="actions">
-          <%= form.submit class: 'btn btn-primary' %>
+          <div class="form-group">
+            <%= form.label :end_date %>
+            <%= form.date_select :end_date, id: :evidence_end_date, :order => [:month, :year], class: 'form-control' %>
+          </div>
+          <div class="actions">
+            <%= form.submit class: 'btn btn-primary' %>
+          </div>
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="form-group">
-          <%= form.label :report %>
-          <%= form.cktext_area :report, id: :evidence_report %>
+      <div class="col-md-8 card">
+        <div class="card-body">
+          <div class="form-group">
+            <%= form.label :report %>
+            <%= form.cktext_area :report, id: :evidence_report %>
+          </div>
         </div>
       </div>
     </div>
-
-
-
 <% end %>
